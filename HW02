@@ -1,0 +1,23 @@
+# -*- coding:utf-8 -*-
+import sys
+
+reload(sys)
+sys.setdefaultencoding("utf-8")
+
+#TODO question1
+# def make_adder(n):
+#     return lambda k : n + k
+# print make_adder(5)
+
+#TODO question2
+def double_eights(n):
+    # 让数字n从各位开始变短，一位一位的判断数字是否为8，当倒数第一个数字和倒数第二个数字都为8则输出True
+    # 否则输出False
+    last_num = n % 10 #最后一个数字
+    second_num = n // 10 % 10 #倒数第二个数字
+    if last_num == 8 and second_num == 8:
+        return True
+    elif n < 100:
+        return False
+    return double_eights(n // 10) #让数字去掉最后一位的数字，调用自己，直到数字n<100为止
+print double_eights(881599)
