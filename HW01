@@ -1,0 +1,62 @@
+# -*- coding:utf-8 -*-
+import sys
+reload(sys)
+sys.setdefaultencoding("utf-8")
+from operator import add, sub
+
+
+# TODO question 1
+# def a_plus_abs_b(a,b):
+#     if b < 0:
+#         result = sub(a,b)
+#     else:
+#         result = add(a,b)
+#     return result
+# print(a_plus_abs_b(3,5))
+# print(a_plus_abs_b(3,-5))
+
+# TODO question 2
+# def two_of_three(a,b,c):
+#     list1 = [a,b,c]
+#     min_num = min(list1)
+#     list1.remove(min_num)
+#     num1 = list1[0]
+#     num2 = list1[1]
+#     result = num1 * num1 + num2 * num2
+#     return result
+# print(two_of_three(5,5,5))
+
+
+# TODO question 3
+# def largest_factor(n):
+#     num1 = n-1
+#     while num1 > 0:
+#         if n % num1 == 0:
+#             return num1
+#         num1 -= 1
+# print(largest_factor(80))
+
+# TODO question 4（没做出来）
+# def if_function(condition, true_result, false_result):
+#     if condition:
+#         return True
+#     else:
+#         return False
+
+#TODO question 5
+def  hailstone(n):
+    # count 代表冰雹步骤的数量
+    count = 1
+    while n != 1:
+        print n
+        if n % 2 == 0:
+            n = n // 2
+        else:
+            n = n * 3 + 1
+        count += 1
+
+    print n   #此时n的值为1
+    return count
+result = hailstone(10)
+print "冰雹序列步骤的数量为：%d"%result
+
